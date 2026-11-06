@@ -2,14 +2,8 @@
 
 int main(void) {
     
+    return 0;
 }
-
-
-
-
-
-
-
 
 /*
 EXERCISES:
@@ -116,5 +110,92 @@ printf("*** ACME checkbook-balancing program ***\n");
 
     }
 
+------------------
+6)
 
+float num, largest=0.0f;
+    
+    while(1) {
+        printf("Enter a number: ");
+        scanf("%f", &num);
+        
+        if(num<=0){break;}
+
+        if(num>=largest) {
+            largest = num;
+        }
+    }
+
+printf("The largest number entered was %.4f\n",largest);
+--------------------------
+7) GCD of 2 numbers
+
+int r,gcd;
+    unsigned long long m,n;
+
+    printf("Enter two integers: ");
+    scanf("%llu %llu", &m, &n);
+
+    while(1) {
+        if(m%n==0) {
+            gcd = n;
+            break;
+        }
+        r = m%n;
+        m=n;
+        n=r;
+    }
+
+    printf("Greatest common divisor: %d\n", gcd);
+----------------------------
+8) Convert fraction to lowest terms
+    int n,m, gcd, r,n_cpy,m_cpy;
+
+    printf("Enter a fraction: ");
+    scanf("%d/%d", &n, &m);
+    n_cpy = n;
+    m_cpy = m;
+
+    while(1) {
+        if(m%n==0) {
+            gcd = n;
+            break;
+        }
+        r = m%n;
+        m=n;
+        n=r;
+    }
+
+    printf("gcd - %d\n", gcd);
+    printf("In lowest terms: %d/%d\n", (n_cpy/gcd), (m_cpy/gcd));
+
+    return 0;
+----------------------------------
+9)PRINTING THE CALENDER ( was fun and slightly challenging)
+int days, start_day;
+
+    printf("Enter the number of days in month: ");
+    scanf("%d", &days);
+
+    printf("Enter starting day of the week (1=Sun, 7=Sat): ");
+    scanf("%d", &start_day);
+
+    printf("\n");
+
+    printf("Sun\tMon\tTue\tWed\tThu\tFri\tSat \n");
+    for(int j=1;j<start_day;j++){
+            printf("\t");
+    }
+    for(int i=1; i<=days; i++) {
+        
+        if((i+start_day -1 )%7==0){
+            printf("%d\n", i);
+            continue;
+        }
+
+        printf("%d\t", i);
+    }
+    printf("\n\n");
+---------------------------------------------------------
+10)    
 */
